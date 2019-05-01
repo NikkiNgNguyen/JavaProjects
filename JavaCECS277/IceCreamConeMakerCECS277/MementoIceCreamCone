@@ -1,0 +1,115 @@
+/*Nikki Nguyen
+      October 23, 2017
+      Purpose: Memento class that saves an object to an object stream
+      Inputs: number of scoops, flavor, type of cone, toppings
+      Output: ice cream cone saved to an object stream
+
+    */
+    import java.io.*;
+    import java.util.ArrayList;
+
+    /**
+     * memento class that implements serializable to change an object to byte stream
+     * @author NikkiNguyen
+     */
+    public class MementoIceCreamCone implements Serializable{
+        private int numberOfScoops;
+        private String flavor;
+        private String typeOfCone;
+        private ArrayList<String>toppings = new ArrayList<String>();
+        private double price;
+
+        /**
+         * constructor takes in properties for ice cream cone
+         * @param numberOfScoops
+         * @param flavor
+         * @param typeOfCone
+         * @param toppings
+         * @param price
+         */
+        public MementoIceCreamCone(int numberOfScoops, String flavor, String typeOfCone, ArrayList<String> toppings, double price){
+        this.numberOfScoops = numberOfScoops;
+        this.flavor = flavor;
+        this.typeOfCone = typeOfCone;
+        this.toppings = toppings;
+        this.price = price;
+    }
+
+    /**
+     * gets number of scoops
+     * @return integer number of scoops
+     */
+    public int getNumberOfScoops(){
+        return numberOfScoops;
+    }
+
+    /**
+     * gets ice cream flavor
+     * @return vanilla, chocolate, strawberry, mimi's minty
+     */
+    public String getFlavor(){
+        return flavor;
+    }
+
+    /**
+     * gets type of cone
+     * @return regular, waffle, sugar
+     */
+    public String getTypeOfCone(){
+        return typeOfCone;
+    }
+
+    /**
+     * gets toppings as an array list
+     * @return toppings
+     */
+    public ArrayList<String> getToppings(){
+        return toppings;
+    }
+
+    /**
+     * sets this number of scoops as current number of scoops
+     * @param numberOfScoops
+     */
+    public void setNumberOfScoops(int numberOfScoops){
+        this.numberOfScoops = numberOfScoops;
+    }
+
+    /**
+     * sets this flavor as current flavor
+     * @param flavor
+     */
+    public void setFlavor(String flavor){
+        this.flavor = flavor;
+    }
+
+    /**
+     * sets this type of cone as current cone type
+     * @param typeOfCone
+     */
+    public void setTypeOfCone(String typeOfCone){
+        this.typeOfCone = typeOfCone;
+    }
+
+    /**
+     * sets these toppings as toppings on ice cream
+     * @param toppings
+     */
+    public void setToppings(ArrayList<String> toppings){
+        this.toppings = toppings;
+    }
+    /**
+     * sets price to price * number of scoops
+     * @param numberOfScoops
+     */
+    public void setPrice(int numberOfScoops){
+        this.price = price * numberOfScoops;
+    }
+    /**
+     * gets price
+     * @return price
+     */
+    public double getPrice(){
+        return price;
+    }
+}
